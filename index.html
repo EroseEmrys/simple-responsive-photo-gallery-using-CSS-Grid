@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            color: #333; 
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fff; 
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 250px 1fr;
+            grid-template-areas: 
+                "header header"
+                "sidebar content"
+                "footer footer";
+        }
+
+        header, footer {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #070707;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        nav {
+            grid-area: sidebar;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            display: block;
+            color: #fff; 
+            padding: 10px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            background-color: #e2c8c8;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        #content {
+            grid-area: content;
+            padding: 20px;
+            background-color: #fff; 
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 500px 500px 500px;
+            grid-template-rows: 300px 300px ;
+            grid-gap: 20px;
+        }
+
+        #content div {
+            background-color: #444; 
+            padding: 20px;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #content div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        #content .item1 { background-image: url('https://images.pexels.com/photos/276267/pexels-photo-276267.jpeg'); }
+        #content .item2 { background-image: url('https://images.pexels.com/photos/9492811/pexels-photo-9492811.jpeg'); }
+        #content .item3 { background-image: url('https://images.pexels.com/photos/933255/pexels-photo-933255.jpeg'); }
+        #content .item4 { background-image: url('https://images.pexels.com/photos/7256192/pexels-photo-7256192.jpeg'); }
+        #content .item5 { background-image: url('https://images.pexels.com/photos/8466792/pexels-photo-8466792.jpeg'); }
+        #content .item6 { background-image: url('https://images.pexels.com/photos/5428148/pexels-photo-5428148.jpeg'); }
+       
+        .article {
+            padding: 20px;
+            background-color: #fff; 
+            border-radius: 4px;
+            margin: 20px;
+        }
+
+        .article h2 {
+            color: #444; 
+        }
+
+        .article p {
+            color: #666; 
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "header"
+                    "content"
+                    "sidebar"
+                    "footer";
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+            #content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+
+    <nav>
+        <a href="#article">Article 1</a>
+        <a href="#article">Article 2</a>
+        <a href="#article">Article 3</a>
+        <a href="#article">Article 4</a>
+        <a href="#article">Article 5</a>
+        <a href="#article">Article 6</a>
+    </nav>
+
+    <div id="content">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        
+    </div>
+<br>
+    <footer style="margin: 100px;">
+        <p>&copy; 2024 Photo Gallery. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
